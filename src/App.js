@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
 
 function App() {
   const contidion = true
@@ -33,9 +34,7 @@ function App() {
     <div className="App">
       <NavBar />
       <header className="App-header">
-        <p>
-          Tienda de comidas Huaranca
-        </p>
+        <ItemListContainer />
       </header>
     </div>
   );
