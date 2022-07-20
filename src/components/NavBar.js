@@ -1,10 +1,10 @@
 import React from 'react';
-import './NavBar.css';
+import '../App.css';
 import CartWidget from './CartWidget';
 
 function NavBar(props) {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#"><img src="https://us.123rf.com/450wm/andyadi/andyadi1812/andyadi181200053/114214111-plantilla-de-dise%C3%B1o-de-logotipo-de-icono-de-vector-de-restaurante-de-comida-de-sombrero-de-chef.jpg?ver=6" alt="" /></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,9 +23,7 @@ function NavBar(props) {
                         </li>
                     </ul>
                     <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <a className="nav-link" href="#"><CartWidget /></a>
-                        </li>
+                        <CartWidget />
                     </ul>
                 </div>
             </div>

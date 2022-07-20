@@ -1,11 +1,11 @@
 import React from 'react';
-import './ItemListContainer.css';
+import '../App.css';
 
-function ItemListContainer(props) {
+function ItemListContainer({ greeting }) {
     return (
-        <div className='container'>
+        <div className='container mt-4'>
             <p>
-                Catalogo - Tienda de comidas Huaranca
+                {greeting}
             </p>
         </div>
     );

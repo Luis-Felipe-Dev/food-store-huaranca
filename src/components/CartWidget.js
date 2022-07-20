@@ -1,9 +1,12 @@
 import React from 'react';
-import './CartWidget.css';
+import '../App.css';
 
 function CartWidget(props) {
     return (
-        <i class="bi bi-cart4"></i>
+        <li className="nav-item">
+            <a className="nav-link" href="#">
+                <i className="bi bi-cart4"></i></a>
+        </li>
     );
 }
 
