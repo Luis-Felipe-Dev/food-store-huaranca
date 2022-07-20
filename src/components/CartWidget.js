@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-function CartWidget(props) {
+function CartWidget() {
     return (
         <li className="nav-item">
             <a className="nav-link" href="#">

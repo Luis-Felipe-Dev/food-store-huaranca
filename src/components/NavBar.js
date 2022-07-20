@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 import CartWidget from './CartWidget';
 
-function NavBar(props) {
+function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">

@@ -27,13 +27,13 @@ function App() {
 
   // console.log({ alfanumericosVersionNueva })
 
-
   return (
     <>
       <div className='container-fluid'>
         <NavBar />
-        
+
         <ItemListContainer greeting="Hola desde ItemListContainer" />
+
       </div>
     </>
   );
