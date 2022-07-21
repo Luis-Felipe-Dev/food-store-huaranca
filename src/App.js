@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
+import ItemCount from './components/ItemCount';
 
 function App() {
   // const contidion = true
@@ -27,6 +28,9 @@ function App() {
 
   // console.log({ alfanumericosVersionNueva })
 
+  const onAdd = (cantidad) => {
+    console.log(`Agregaste ${cantidad} items al carrito`)
+  }
   return (
     <>
       <div className='container-fluid'>
@@ -34,6 +38,7 @@ function App() {
 
         <ItemListContainer greeting="Hola desde ItemListContainer" />
 
+        <ItemCount stock={10} initial={1} onAdd={onAdd} />
       </div>
     </>
   );
