@@ -38,7 +38,7 @@ function App() {
 
         <ItemListContainer greeting="Hola desde ItemListContainer" />
 
-        <ItemCount stock={10} initial={1} onAdd={onAdd} />
+        {/* <ItemCount stock={10} initial={1} onAdd={onAdd} /> */}
       </div>
     </>
   );

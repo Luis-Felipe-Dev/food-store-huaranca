@@ -15,7 +15,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     };
     return (
         <div className="container text-center">
-            <div className="card">
+            <div className="card-sm border">
                 <div className="row">
                     <div className="col-4">
                         <button className="btn btn-primary m-2" onClick={restCount}> - </button>
