@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemCount from './components/ItemCount';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
   // const contidion = true
@@ -36,7 +37,9 @@ function App() {
       <div className='container-fluid'>
         <NavBar />
 
-        <ItemListContainer greeting="Hola desde ItemListContainer" />
+        {/* <ItemListContainer greeting="Hola desde ItemListContainer" /> */}
+
+        <ItemDetailContainer greeting="Hola desde ItemListContainer" />
 
         {/* <ItemCount stock={10} initial={1} onAdd={onAdd} /> */}
       </div>
