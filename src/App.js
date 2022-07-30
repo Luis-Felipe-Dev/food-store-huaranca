@@ -36,11 +36,8 @@ function App() {
     <>
       <div className='container-fluid'>
         <NavBar />
-
         {/* <ItemListContainer greeting="Hola desde ItemListContainer" /> */}
-
         <ItemDetailContainer greeting="Hola desde ItemListContainer" />
-
         {/* <ItemCount stock={10} initial={1} onAdd={onAdd} /> */}
       </div>
     </>
