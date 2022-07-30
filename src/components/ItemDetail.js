@@ -14,7 +14,7 @@ export default function ItemDetail({ producto }) {
                         <h5 className="card-title">{producto.title}</h5>
                         <p className="card-text">{producto.description}</p>
                         <p className="card-text">{producto.price}</p>
-                        <p className="card-text"><small className="text-muted">Código del producto - {producto.id}</small></p>
+                        <p className="card-text"><small className="text-muted">Categoria - {producto.id}</small></p>
                     </div>
                 </div>
             </div>

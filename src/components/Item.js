@@ -7,7 +7,7 @@ const onAdd = (cantidad) => {
 
 const Item = ({ producto }) => {
     return (
-        <div className="card" style={{ width: "20rem", margin: ".5rem" }}>
+        <div className="card col-sm-3 mt-1">
             <img src={producto.pictureUrl} className="card-img-top" alt="{producto.title}" />
             <div className="card-body">
                 <p className="card-text">{producto.title}</p>
