@@ -40,7 +40,8 @@ function App() {
           <NavBar />
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
-            <Route path="*" element={<ItemDetailContainer greeting="Hola desde ItemListContainer" />} />
+            <Route path="/plate/:plateId" element={<ItemDetailContainer />} />
+            <Route path="/category/:categoryId" element={<ItemListContainer />} />
             <Route path="*" element={<ItemCount stock={10} initial={1} onAdd={onAdd} />} />
           </Routes>
           {/* <ItemListContainer greeting="Hola desde ItemListContainer" /> */}
