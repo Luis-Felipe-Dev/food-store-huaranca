@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom';
 
 function ItemListContainer({ greeting }) {
     const { categoryId } = useParams()
-    // console.log(categoryId)
     const [listPlates, setListPlates] = useState([])
     const [mensaje, setMensaje] = useState(false)
 
@@ -21,19 +20,10 @@ function ItemListContainer({ greeting }) {
                 .catch(() => setMensaje('Hubo un error, intente mas tarde'))
         } else {
             getPlatesCategory(categoryId)
-                .then((data) => setListPlates(data.filter((listPlates) => listPlates.category === parseInt(categoryId))))
+                .then((data) => setListPlates(data.filter((listPlates) => listPlates.category === categoryId)))
                 .catch(() => setMensaje('Hubo un error, intente mas tarde'))
         }
     }, [categoryId])
-    // console.log(listPlates)
-
-    // useEffect(() => {
-    //     getPlatesCategory(categoryId)
-    //         .then((data) => setListPlates(data.filter((listPlates) => listPlates.category === parseInt(categoryId))))
-    //         .catch(() => setMensaje('Hubo un error, intente mas tarde'))
-
-    // }, [])
-    // console.log(listPlates)
 
     return (
         <div className='container mt-4 mb-4'>

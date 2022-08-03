@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom';
 
 function ItemDetailContainer({ greeting }) {
     const { plateId } = useParams()
-    // console.log(plateId)
     const [plate, setPlate] = useState([])
     const [mensaje, setMensaje] = useState(false)
 
@@ -19,7 +18,6 @@ function ItemDetailContainer({ greeting }) {
             .then((data) => setPlate(data.filter((plate) => plate.id === parseInt(plateId))[0]))
             .catch(() => setMensaje('Hubo un error, intente mas tarde'))
     }, [plateId])
-    // console.log(plate)
 
     return (
         <div className='container mt-4 mb-4'>

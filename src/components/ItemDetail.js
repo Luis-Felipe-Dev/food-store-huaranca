@@ -2,7 +2,6 @@ import React from 'react'
 
 function ItemDetail({ plate }) {
 
-    // console.log({ plate })
     return (
         <div className="card mb-3 col-12 producto">
             <div className="row g-0">

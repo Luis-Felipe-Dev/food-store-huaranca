@@ -7,7 +7,6 @@ const onAdd = (cantidad) => {
 }
 
 const Item = ({ plates }) => {
-    // console.log(plates)
     return (
         <div className="card col-sm-3 mt-1">
             <img src={plates.pictureUrl} className="card-img-top" alt="{plates.title}" />
@@ -18,7 +17,6 @@ const Item = ({ plates }) => {
                 <Link className="btn btn-dark" to={`/plate/${plates.id}`}>Ver detalles</Link>
             </div>
             <ItemCount initial={1} stock={10} onAdd={onAdd} />
-            {/* <button className="btn btn-primary">Ver más</button> */}
         </div>
     )
 }

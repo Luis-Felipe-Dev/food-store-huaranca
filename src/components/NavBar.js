@@ -13,17 +13,14 @@ function NavBar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarScroll">
                     <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
-                        {/* <li className="nav-item">
-                            <Link to="/">Nosotros</Link>
-                        </li> */}
                         <li className="nav-item">
-                            <Link to="/category/1">Carnes</Link>
+                            <Link to="/category/especialidades">Carnes</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/category/2">Ensaladas</Link>
+                            <Link to="/category/ensaladas">Ensaladas</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/category/3">Pastas</Link>
+                            <Link to="/category/pastas">Pastas</Link>
                         </li>
                     </ul>
                     <ul className="navbar-nav">
