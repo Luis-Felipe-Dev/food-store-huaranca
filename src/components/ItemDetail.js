@@ -1,6 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import ItemCount from './ItemCount'
 
 function ItemDetail({ plate }) {
+    const [cantidad, setCantidad] = useState(0);
+    const { plateId } = useParams()
+    // const [mensaje, setMensaje] = useState(false)
+
+    const [compra, setCompra] = useState(false);
+
+    const onAdd = () => {
+        setCompra(true)
+    }
+
+    useEffect(() => {
+        console.log({ cantidad })
+    }, [cantidad])
 
     return (
         <div className="card mb-3 col-12 producto">
@@ -16,6 +31,15 @@ function ItemDetail({ plate }) {
                         <p className="card-text"><small className="text-muted">Categoria - {plate.category}</small></p>
                     </div>
                 </div>
+                {
+                    compra
+                        ?
+                        <div className='text-center'>
+                            <Link className="btn btn-success m-2" to="/cart">Terminar compra</Link>
+                        </div>
+                        :
+                        <ItemCount initial={1} stock={plate.stock} cantidad={cantidad} setCantidad={setCantidad} onAdd={onAdd} />
+                }
             </div>
         </div>
     )
