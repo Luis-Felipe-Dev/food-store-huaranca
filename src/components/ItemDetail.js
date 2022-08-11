@@ -1,20 +1,30 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import { useCart } from './CartContext';
 import ItemCount from './ItemCount'
 
 function ItemDetail({ plate }) {
     const [cantidad, setCantidad] = useState(0);
     const { plateId } = useParams()
-    // const [mensaje, setMensaje] = useState(false)
-
+    const { addToCart } = useCart()
     const [compra, setCompra] = useState(false);
+    const { id, category, title, description, price, pictureUrl, stock } = plate
 
     const onAdd = () => {
+        let plateAComprar = {
+            id,
+            title,
+            pictureUrl,
+            stock,
+            price,
+            quantity: cantidad
+        }
         setCompra(true)
+        addToCart(plateAComprar)
     }
 
     useEffect(() => {
-        console.log({ cantidad })
+        // console.log({ cantidad })
     }, [cantidad])
 
     return (
