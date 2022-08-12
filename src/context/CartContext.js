@@ -26,7 +26,8 @@ export const CartProvider = ({ children }) => {
     }
 
     const removePlate = (id) => {
-        return cart.filter((plate) => plate.id !== id)
+        let newCart = cart.filter((plate) => plate.id !== id)
+        setCart(newCart)
     }
 
     const emptyCart = () => {

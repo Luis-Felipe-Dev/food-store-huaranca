@@ -81,3 +81,8 @@ i {
 .producto-detalles-card {
   padding: 100px;
 }
+
+.nav-item span {
+  background-color: red;
+  border-radius: 10px;
+}

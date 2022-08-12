@@ -8,7 +8,7 @@ const Item = ({ plates }) => {
             <div className="card-body">
                 <p className="card-text">{plates.title}</p>
                 <p className="card-text">{plates.description}</p>
-                <p className="card-text">{plates.price}</p>
+                <p className="card-text">S/. {parseFloat(plates.price).toFixed(2)}</p>
                 <Link className="btn btn-dark" to={`/plate/${plates.id}`}>Ver detalles</Link>
             </div>
         </div>
