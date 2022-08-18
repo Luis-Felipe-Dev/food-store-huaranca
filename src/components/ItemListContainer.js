@@ -3,6 +3,8 @@ import '../App.css';
 import { getPlatesCategory, mock } from '../utils/api';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
+import { db } from "../firebase/Firebase";
+import { query, where, collection, getDocs } from "firebase/firestore"
 
 function ItemListContainer({ greeting }) {
     const { categoryId } = useParams()
@@ -14,15 +16,21 @@ function ItemListContainer({ greeting }) {
     }
 
     useEffect(() => {
-        if (categoryId === undefined) {
-            mock()
-                .then((res) => setListPlates(res))
-                .catch(() => setMensaje('Hubo un error, intente mas tarde'))
-        } else {
-            getPlatesCategory(categoryId)
-                .then((data) => setListPlates(data.filter((listPlates) => listPlates.category === categoryId)))
-                .catch(() => setMensaje('Hubo un error, intente mas tarde'))
-        }
+        const q = categoryId
+            ? query(collection(db, 'plates'), where("category", "==", categoryId))
+            : collection(db, 'plates')
+
+        getDocs(q)
+            .then(result => {
+                const lista = result.docs.map((product) => {
+                    return {
+                        id: product.id,
+                        ...product.data()
+                    }
+                })
+                setListPlates(lista)
+            })
+            .catch((error) => console.log(error))
     }, [categoryId])
 
     return (

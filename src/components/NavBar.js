@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../App.css';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { db } from "../firebase/Firebase";
+import { collection, getDocs } from "firebase/firestore";
 
 function NavBar() {
     const { cartQuantity } = useCart()
+    const [categories, setCategories] = useState([]);
+    useEffect(() => {
+        const q = collection(db, 'categories')
+        getDocs(q)
+            .then(result => {
+                const lista = result.docs.map((category) => {
+                    return {
+                        id: category.id,
+                        ...category.data()
+                    }
+                })
+                setCategories(lista)
+            })
+            .catch((error) => console.log(error))
+    }, []);
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
@@ -15,15 +32,13 @@ function NavBar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarScroll">
                     <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
-                        <li className="nav-item">
-                            <Link to="/category/especialidades">Carnes</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/category/ensaladas">Ensaladas</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/category/pastas">Pastas</Link>
-                        </li>
+                        {
+                            categories.map(category => (
+                                <li className="nav-item" key={category.id}>
+                                    <Link to={`/category/${category.nombre}`}>{category.nombre}</Link>
+                                </li>
+                            ))
+                        }
                     </ul>
                     {
                         cartQuantity() > 0 ? (

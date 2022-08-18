@@ -8,6 +8,9 @@ function Cart() {
     return (
         cart.length > 0 ?
             <div>
+                <div className='text-center'>
+                    <button className="btn btn-danger m-2" onClick={emptyCart}>Vaciar carrito</button>
+                </div>
                 <table className="table table-bordered mt-4">
                     <thead>
                         <tr>
@@ -39,7 +42,7 @@ function Cart() {
                 </table>
                 <div className='text-center'>
                     <Link className="btn btn-success m-2" to="/">Seguir comprando</Link>
-                    <a className="btn btn-primary m-2" onClick={emptyCart}>Terminar Compra</a>
+                    <a className="btn btn-primary m-2">Terminar Compra</a>
                 </div>
             </div>
             :

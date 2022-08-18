@@ -3,6 +3,8 @@ import '../App.css';
 import { getItem } from '../utils/api';
 import ItemDetail from './ItemDetail';
 import { useParams } from 'react-router-dom';
+import { collection, doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase/Firebase";
 
 function ItemDetailContainer({ greeting }) {
     const { plateId } = useParams()
@@ -14,9 +16,18 @@ function ItemDetailContainer({ greeting }) {
     }
 
     useEffect(() => {
-        getItem(plateId)
-            .then((data) => setPlate(data.filter((plate) => plate.id === parseInt(plateId))[0]))
-            .catch(() => setMensaje('Hubo un error, intente mas tarde'))
+        const collecionProductos = collection(db, 'plates')
+        const referenciaDoc = doc(collecionProductos, plateId)
+        getDoc(referenciaDoc)
+            .then(result => {
+                setPlate({
+                    id: result.id,
+                    ...result.data()
+                })
+            })
+            .catch(error => {
+                console.log({ error })
+            })
     }, [plateId])
 
     return (
