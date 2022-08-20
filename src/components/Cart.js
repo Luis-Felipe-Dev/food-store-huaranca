@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
 function Cart() {
-    let { cart, cartTotal, cartQuantity, removePlate, emptyCart } = useCart()
+    const { cart, cartTotal, cartQuantity, removePlate, emptyCart } = useCart()
     // console.log(cart)
     return (
         cart.length > 0 ?
