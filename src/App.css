@@ -86,3 +86,21 @@ i {
   background-color: red;
   border-radius: 10px;
 }
+
+.finalizar-compra {
+  padding-top: 3%;
+  padding-bottom: 3%;
+  background-color: #1d95a559;
+  border-radius: 15px;
+}
+
+.finalizar-compra .btn {
+  margin-top: 2%;
+  border-radius: 15px;
+}
+
+.finalizar-compra img {
+  margin-top: 2%;
+  width: 20%;
+  border-radius: 150px;
+}

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import ItemCount from './ItemCount'
+import ItemCount from './ItemCount';
 
 function ItemDetail({ plate }) {
     const [cantidad, setCantidad] = useState(1);

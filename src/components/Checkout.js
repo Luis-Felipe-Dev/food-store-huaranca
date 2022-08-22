@@ -1,10 +1,13 @@
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
-import React, { useState } from 'react'
-import { useCart } from '../context/CartContext'
-import { db } from '../firebase/Firebase'
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
+import { db } from '../firebase/Firebase';
+import cubre_plato from '../asset/cubre-plato.jpg';
 
 const Checkout = () => {
     const [comprador, setComprador] = useState({})
+    const [orderId, setOrderId] = useState()
     const { cart, cartTotal, cartQuantity, removePlate, emptyCart } = useCart()
 
     const datosComprador = (e) => {
@@ -42,25 +45,28 @@ const Checkout = () => {
                     <form onSubmit={finalizarCompra}>
                         <h2 className='mt-4 mb-4'>Checkout</h2>
                         <div className="mb-3">
-                            <label name='name' className="form-label"><b>Nombre Completo</b></label>
-                            <input type="text" className="form-control" id="name" onChange={datosComprador} />
+                            <label htmlFor='name' className="form-label"><b>Nombre Completo</b></label>
+                            <input type="text" className="form-control" id="name" name='name' onChange={datosComprador} />
                         </div>
                         <div className="mb-3">
-                            <label name='telefono' className="form-label"><b>Número de télefono</b></label>
-                            <input type="number" className="form-control" id="telefono" onChange={datosComprador} />
+                            <label htmlFor='telefono' className="form-label"><b>Número de télefono</b></label>
+                            <input type="number" className="form-control" id="telefono" name='telefono' onChange={datosComprador} />
                         </div>
                         <div className="mb-3">
-                            <label name='email' className="form-label"><b>Correo Electrónico</b></label>
-                            <input type="email" className="form-control" id="email" onChange={datosComprador} />
+                            <label htmlFor='email' className="form-label"><b>Correo Electrónico</b></label>
+                            <input type="email" className="form-control" id="email" name='email' onChange={datosComprador} />
                         </div>
                         <button type="submit" className="btn btn-primary">Finalizar Compra</button>
                     </form>
                 </div>
                 :
-                <div>
-                    <h2>Muchas gracias por su compra!</h2>
-                    <h3>Su orden es: {orderId}</h3>
-                    <button>Volver al la página principal</button>
+                <div className='container mt-5 text-center finalizar-compra'>
+                    <h2>¡Muchas gracias por su compra!</h2>
+                    <h3>Su orden es: <b className='bg-success text-white'>{orderId}</b></h3>
+                    <div>
+                        <img src={cubre_plato}></img>
+                    </div>
+                    <Link className="btn btn-success" to="/">Volver al la página principal</Link>
                 </div>
             }
         </>

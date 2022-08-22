@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
@@ -42,7 +42,7 @@ function Cart() {
                 </table>
                 <div className='text-center'>
                     <Link className="btn btn-success m-2" to="/">Seguir comprando</Link>
-                    <a className="btn btn-primary m-2">Terminar Compra</a>
+                    <Link className="btn btn-primary m-2" to="/checkout">Terminar Compra</Link>
                 </div>
             </div>
             :
