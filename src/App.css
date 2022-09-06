@@ -104,3 +104,7 @@ i {
   width: 20%;
   border-radius: 150px;
 }
+
+.card-img-top {
+  border-radius: 100px;
+}
