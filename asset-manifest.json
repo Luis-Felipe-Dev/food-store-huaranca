@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/food-store-huaranca/static/css/main.2fcd7f23.css",
+    "main.js": "/food-store-huaranca/static/js/main.f008c36d.js",
+    "static/js/787.14608002.chunk.js": "/food-store-huaranca/static/js/787.14608002.chunk.js",
+    "static/media/bootstrap-icons.woff?": "/food-store-huaranca/static/media/bootstrap-icons.7ff3ca6fa798de3f8ac2.woff",
+    "static/media/bootstrap-icons.woff2?": "/food-store-huaranca/static/media/bootstrap-icons.f2539a501be3a673de05.woff2",
+    "static/media/cubre-plato.jpg": "/food-store-huaranca/static/media/cubre-plato.f7c0c559aea3908f13fd.jpg",
+    "index.html": "/food-store-huaranca/index.html",
+    "main.2fcd7f23.css.map": "/food-store-huaranca/static/css/main.2fcd7f23.css.map",
+    "main.f008c36d.js.map": "/food-store-huaranca/static/js/main.f008c36d.js.map",
+    "787.14608002.chunk.js.map": "/food-store-huaranca/static/js/787.14608002.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2fcd7f23.css",
+    "static/js/main.f008c36d.js"
+  ]
+}
