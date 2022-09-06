@@ -2,7 +2,7 @@
 Web de venta de comidas (Carnes, Ensaladas y Pastas)
 
 ### Ruta del GIF de la web
-/public/web_guiado.gif
+![](web_guiado.gif)
 
 ## Available Scripts
 
