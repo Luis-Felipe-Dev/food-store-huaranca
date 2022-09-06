@@ -4,7 +4,6 @@ import { useLocalStorage } from "../utils/useLocalStorage";
 export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
-    // const [cart, saveItem] = useState([])
 
     const { item: cart, loading, error, saveItem: saveItem } = useLocalStorage("Cart", [])
 
