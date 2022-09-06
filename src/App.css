@@ -50,6 +50,7 @@
 img {
   width: 100px;
   line-height: 60px;
+  border-radius: 50px;
 }
 
 a {
@@ -107,4 +108,20 @@ i {
 
 .card-img-top {
   border-radius: 100px;
+}
+
+.bi-facebook,
+.bi-instagram,
+.bi-whatsapp {
+  font-size: 25px;
+}
+
+footer{
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+footer img{
+  width: 40px;
+  border-radius: 20px;
 }

@@ -1,9 +1,12 @@
 import { createContext, useContext, useState } from "react";
+import { useLocalStorage } from "../utils/useLocalStorage";
 
 export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([])
+    // const [cart, saveItem] = useState([])
+
+    const { item: cart, loading, error, saveItem: saveItem } = useLocalStorage("Cart", [])
 
     const addToCart = (item) => {
         const itemInCart = cart.find((plate) => plate.id === item.id)
@@ -15,9 +18,9 @@ export const CartProvider = ({ children }) => {
                     return plate
                 }
             })
-            setCart(updatedCart)
+            saveItem(updatedCart)
         } else {
-            setCart([...cart, item])
+            saveItem([...cart, item])
         }
     }
 
@@ -27,11 +30,11 @@ export const CartProvider = ({ children }) => {
 
     const removePlate = (id) => {
         let newCart = cart.filter((plate) => plate.id !== id)
-        setCart(newCart)
+        saveItem(newCart)
     }
 
     const emptyCart = () => {
-        setCart([])
+        saveItem([])
     }
 
     const cartQuantity = () => {
